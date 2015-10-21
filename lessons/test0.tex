@@ -1,0 +1,91 @@
+% This is a small sample LaTeX input file (Version of 10 April 1994)
+%
+% Use this file as a model for making your own LaTeX input file.
+% Everything to the right of a  %  is a remark to you and is ignored by LaTeX.
+
+% The Local Guide tells how to run LaTeX.
+
+% WARNING!  Do not type any of the following 10 characters except as directed:
+%                &   $   #   %   _   {   }   ^   ~   \   
+
+\input{../FormatHeader.tex}
+
+\begin{document}               % plus the \end{document} command at the end.
+
+\Large
+
+\bigheading{MTH 337: Week 3}
+
+\heading{Day 6. Monday 14 September, 2015}
+
+Let's get going. First: the quiz. 
+
+\begin{board}
+\underline{Quiz 1}
+\begin{itemize}
+\item The median score was 10/14.
+\item Grading questions: see me after class or in office hours.
+\item Quiz cards: see me after class.
+\item Let's talk about question 6.
+\end{itemize}
+\end{board}
+
+\begin{lstlisting}
+6 != 5 or 5 > 4 and 4 == 3
+\end{lstlisting}
+
+Returns True! Just to check, we can also do:
+
+\begin{lstlisting}
+True or True and False
+\end{lstlisting}
+
+Returns True again. On the quiz about 85\% of students answered False, and, to tell you the truth, that would have been my answer too!
+
+This story does have a happy ending, by the way, which we'll come to.
+
+So what's going on? When we talked about logical operators, I stated that and, or, not were all of equal precedence. Working through from left to right, we would have got "False".
+
+This is how it's stated in one of the references I've been using, "Scientific Computation", by Bruce Shapiro.
+
+SHOW SHAPIRO TABLE 6.2.
+
+It's also how logical operator precedence is described on several Python websites. 
+
+Unfortunately, however, this is \underline{wrong}. The actual precedence, as given in the official Python documentation, is:
+
+\begin{board}
+\begin{enumerate}
+\item not
+\item and
+\item or
+\end{enumerate}
+\end{board}
+
+So, the ``and'' is evaluated \underline{first}, then the ``or''. If we go back to this question, this gives us "True", which is what Python said.
+
+\includegraphics{./spline_transformed.png}
+
+Given what was said in class, the only reasonable thing is to give everyone a point for this question, which is what has been done.
+
+Like all good stories, this one has a moral:
+
+\begin{board}
+\begin{itemize}
+\item Break complex logical/mathematical expressions down into simpler ones (or use parentheses)
+\item Don't believe everything you read!
+\end{itemize}
+\end{board}
+
+We'll start with a few loose ends to tie up from the first report.
+
+
+\begin{activity}
+Continue with second homework assignment.
+\end{activity}
+
+\begin{finish}
+See me at the end of class if you need more help.
+\end{finish}
+
+\end{document}                 % The input file ends with this command.

@@ -1,0 +1,174 @@
+% This is a small sample LaTeX input file (Version of 10 April 1994)
+%
+% Use this file as a model for making your own LaTeX input file.
+% Everything to the right of a  %  is a remark to you and is ignored by LaTeX.
+
+% The Local Guide tells how to run LaTeX.
+
+% WARNING!  Do not type any of the following 10 characters except as directed:
+%                &   $   #   %   _   {   }   ^   ~   \   
+
+\documentclass[a4paper]{article}        % Your input file must contain these two lines 
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{framed}
+%\usepackage{mdframed}
+
+\definecolor{shadecolor}{rgb}{.95,.95,.95}
+
+\usepackage[urlcolor=blue, 
+	colorlinks=true,
+	pdfauthor={Adam Cunningham}]{hyperref}
+
+\renewcommand*{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+
+\usepackage[
+top    = 2.00cm,
+bottom = 2.50cm,
+left   = 2.00cm,
+right  = 2.00cm]{geometry}
+
+\setlength{\parindent}{0in}
+%\setlength{\oddsidemargin}{0.25in}
+%\setlength{\textwidth}{6in}
+\setlength{\parskip}{.05in}
+%\setlength{\voffset}{-.5in}
+%\setlength{\textheight}{9.25in}
+
+\definecolor{myblue}{rgb}{0,.25,.6}
+\definecolor{light}{gray}{.80}
+
+\newcommand{\greyline}[2]{\vspace{.1in}\colorbox{light}{\parbox{#2in}{\textbf{#1}}}}
+
+\newcommand{\bigheading}[1]{\bigskip \colorbox{light}{\parbox{6.6in} {\color{myblue} \sf \textbf{\Large#1}}} \smallskip}
+\newcommand{\heading}[1]{\medskip {\color{myblue} \sf \textbf{\Large#1}}}
+\newcommand{\subheading}[1]{\medskip {\color{myblue} \sf \large#1}}
+\newcommand{\subject}[1]{\smallskip \textbf{\large#1:}}
+\newcommand{\ssheading}[1]{\medskip {\color{myblue} \sf \textbf{\normalsize#1}} \large}
+
+\newcommand{\sumz}[1]{\sum\limits_{#1 = 0}^{\infty}}
+\newcommand{\sumo}[1]{\sum\limits_{#1 = 1}^{\infty}}
+
+\newcommand{\der}[2]{\frac{d#1}{d#2}}
+\newcommand{\dertwo}[2]{\frac{d^2#1}{d#2^2}}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\bigpder}[2]{\dfrac{\partial#1}{\partial#2}}
+\newcommand{\pdertwo}[2]{\frac{\partial^2#1}{\partial#2^2}}
+\newcommand{\bigpdertwo}[2]{\dfrac{\partial^2#1}{\partial#2^2}}
+
+\setlength{\unitlength}{.5in}
+\newcommand{\proof}{\textit{Proof. }}
+\newcommand{\proofend}{\hfill QED}
+
+\newcommand{\var}{\mathrm{Var}}
+\newcommand{\cov}{\mathrm{Cov}}
+
+% --------------------------------------------------------------------------------
+% 
+% --------------------------------------------------------------------------------
+
+\newenvironment{say}{}{}
+
+% --------------------------------------------------------------------------------
+% Board enrironment is for stuff to write on the board
+% --------------------------------------------------------------------------------
+
+\newenvironment{board}
+{\definecolor{shadecolor}{rgb}{.85,1,.85}
+\begin{shaded*}}
+{\end{shaded*}}
+
+% --------------------------------------------------------------------------------
+% Code environment is for code to run in IPython
+% --------------------------------------------------------------------------------
+
+\usepackage{listings}
+
+\definecolor{codeblue}{rgb}{0,0,1}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeorange}{rgb}{1,.5,0}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codered}{rgb}{1,0,0}
+\definecolor{backcolour}{rgb}{0.95,1,1}
+ 
+\lstdefinestyle{mystyle}{
+    aboveskip=1em,
+    backgroundcolor=\color{backcolour}, 
+    basicstyle=\large, 
+    belowskip=1em, 
+    breakatwhitespace=false,         
+    breaklines=true, 
+    captionpos=b,   
+    commentstyle=\color{codered},
+    frame=single, 
+    keepspaces=true, 
+    keywordstyle=\color{codeorange},
+    language=Python,              
+    numbers=left,                    
+    numbersep=5pt, 
+    numberstyle=\normalsize\color{codegray}, 
+    rulecolor=\color{light},                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false, 
+    stringstyle=\color{codegreen},           
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+% --------------------------------------------------------------------------------
+% Question environment is for questions to ask the class
+% --------------------------------------------------------------------------------
+
+\newenvironment{question}{\begin{framed}}{\end{framed}}
+
+% --------------------------------------------------------------------------------
+% Activity environment is for an activity for the class to do together
+% --------------------------------------------------------------------------------
+
+\newenvironment{activity}
+{\begin{framed}
+\textbf{Activity:}
+\begin{shaded}
+}
+{\end{shaded}
+\end{framed}
+}
+
+% --------------------------------------------------------------------------------
+% finish environment is for the last thing to mention before the class finishes
+% --------------------------------------------------------------------------------
+
+\newenvironment{finish}
+{\definecolor{shadecolor}{rgb}{1,.9,.9}
+\begin{shaded*}}
+{\end{shaded*}}
+
+% --------------------------------------------------------------------------------
+% quiz environment is for the quizzess
+% --------------------------------------------------------------------------------
+
+\newenvironment{quiz}
+{\begin{framed}}
+{\end{framed}}
+
+% --------------------------------------------------------------------------------
+% optional environment is for sections that could be missed out if needed
+% --------------------------------------------------------------------------------
+
+\newenvironment{optional}
+{\begin{leftbar}}
+{\end{leftbar}}
+
+% --------------------------------------------------------------------------------
+
